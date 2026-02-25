@@ -24,14 +24,14 @@ We will use the total number of comments and upvotes on each page to finalize ou
 
 Please review the upcoming V2 features below. In the **Discussion Board at the very bottom of this page**, leave a single comment listing these features and tell us if you think they are **High, Medium, or Low priority** for our immediate roadmap.
 
-| Core Feature Module   | Description                                                   | Your Priority Vote             |
-| :-------------------- | :------------------------------------------------------------ | :----------------------------- |
-| **Budget Tracker**    | Visual envelope budgeting with payment reminders              | _Comment below (High/Med/Low)_ |
-| **Vendor Directory**  | CRM to discover, shortlist, and manage hired pros             | _Comment below (High/Med/Low)_ |
-| **Guest Management**  | Unified roster handling RSVPs for multiple cultural events    | _Comment below (High/Med/Low)_ |
-| **Vision Board**      | Filterable masonry grid for styled inspiration                | _Comment below (High/Med/Low)_ |
-| **Calendar Sync**     | Two-Way Google Calendar integration to prevent double-booking | _Comment below (High/Med/Low)_ |
-| **Multiplayer Roles** | Ability to invite a Partner or professional Coordinator       | _Comment below (High/Med/Low)_ |
+| Core Feature Module   | Research Justification (from 55k+ User Data)                                                           | Recommended Priority |
+| :-------------------- | :----------------------------------------------------------------------------------------------------- | :------------------- |
+| **Vendor Directory**  | **Venue-First Principle:** 82% of couples hire the Venue first. Everything flows downstream from this. | **High**             |
+| **Budget Tracker**    | Solves the #2 overall pain point: **Budget Anxiety** (47% of couples).                                 | **High**             |
+| **Guest Management**  | Solves the #3 overall pain point: **Guest List Paralysis** (36% of couples).                           | **High**             |
+| **Multiplayer Roles** | Solves the **Partner Imbalance** problem (72% inequality). 97% want equal planning.                    | **High**             |
+| **Calendar Sync**     | Essential for zero-surprise execution, but couples can survive with MVP lists temporarily.             | **Medium**           |
+| **Vision Board**      | Highly engaging, but Inspiration is often solved manually via Pinterest (already used by 75%).         | **Medium**           |
 
 ---
 

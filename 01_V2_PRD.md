@@ -33,6 +33,13 @@ While our MVP tells you _what_ to do (e.g., "Set a budget for the florist"), the
 
 In Version 2, Moodscapes evolves from a "Checklist App" into a true **Planning Platform**. We are building the interconnected tools couples usually patch together themselves.
 
+### Research-Driven Product Principles
+
+To ensure V2 solves the most statistically significant pain points identified in our 55k+ user research analysis, the architecture is strictly driven by these two principles:
+
+- **Venue-First Sequencing:** Because 82% of couples hire their venue first, the system (and AI) must always anchor the initial onboarding and Month 1 tasks around Venue selection, as it dictates downstream guest capacity and budget constraints.
+- **Guest Experience Framing:** 75% of couples prioritize the "guest experience" over their own personal aesthetic. The OS (and AI tone) should reframe stressful decisions around hosting responsibility (e.g., "What will make your 116 guests feel most celebrated?").
+
 Here are the 5 core pillars of the V2 expansion:
 
 ### 1. Interactive Subtask "Portals"

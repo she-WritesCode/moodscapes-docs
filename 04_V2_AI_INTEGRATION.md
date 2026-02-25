@@ -63,7 +63,12 @@ interface GenerationContext {
 The system instructions for Gemini must be explicitly updated to handle the new `types` array on subtasks.
 
 > **System Prompt Fragment (To be Added):**  
-> "You are generating tasks. Subtasks are interactive portals. For each subtask, evaluate the required tool and assign the appropriate `types`: `mood_board`, `vendor_browse`, `calendar_event`, `budget_line`, or `checkbox`. A subtask CAN have multiple portals (e.g., `['mood_board', 'vendor_browse']`)."
+> "You are generating tasks. Subtasks are interactive portals. For each subtask, evaluate the required tool and assign the appropriate `types`: `mood_board`, `vendor_browse`, `calendar_event`, `budget_line`, or `checkbox`. A subtask CAN have multiple portals (e.g., `['mood_board', 'vendor_browse']`).
+>
+> **CRITICAL DATA RULES:**
+>
+> 1. **Venue-First:** You MUST prioritize Venue selection tasks in the first month before generating any downstream tasks like catering or decor, as the venue dictates capacity and budget.
+> 2. **Guest Experience Framing:** Reframe your conversational tone to focus on the guest experience. Instead of asking 'What do you want to eat?', ask 'What dining style will make your guests feel most celebrated?'"
 
 **Expected LLM Output (JSON):**
 
