@@ -31,7 +31,7 @@
           hook.beforeEach(function (markdown) {
             rawMarkdown = markdown;
             var copyButton =
-              '<button class="copy-page-btn" onclick="copyPageMarkdown()" style="float: right; margin-top: 5px; padding: 6px 12px; background: #FF6B6B; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; font-family: sans-serif; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: all 0.2s ease;">📋 Copy Full Page for AI</button>\n\n';
+              '<button class="copy-page-btn" onclick="copyPageMarkdown()" style="float: right; margin-top: 5px; padding: 6px 12px; background: #FF6B6B; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; font-family: sans-serif; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: all 0.2s ease;">Copy Full Page for AI</button>\n\n';
             return copyButton + markdown;
           });
 
@@ -42,7 +42,7 @@
                 var btns = document.querySelectorAll(".copy-page-btn");
                 btns.forEach(function (btn) {
                   var originalText = btn.innerHTML;
-                  btn.innerHTML = "✅ Copied Markdown!";
+                  btn.innerHTML = "Copied Markdown!";
                   btn.style.background = "#4CAF50";
                   setTimeout(function () {
                     btn.innerHTML = originalText;
