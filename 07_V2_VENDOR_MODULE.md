@@ -8,12 +8,14 @@ Finding and managing vendors is one of the most time-consuming parts of wedding 
 
 ## 1. The Vendor CRM (For Stakeholders)
 
-### 1.1 The Global Directory vs. "My Team"
+### 1.1 A Personal CRM vs. A Global Dashboard
 
-Planning involves looking at hundreds of options, but ultimately you only hire about 10-15 people. V2 makes a strict visual distinction between these two states:
+To avoid the massive operational overhead of building a "Yelp-style" marketplace (which requires onboarding vendors and admins), the Moodscapes Vendor module is strictly designed as a **Personal CRM**.
 
-- **Global Directory:** A massive, searchable marketplace of available vendors, filterable by category, location, and price point.
-- **My Team:** A curated view showing _only_ the vendors the user has saved, contacted, or hired. On the home dashboard, these hired vendors appear as a quick-access "speed dial" (e.g., small circular avatars of the photographer and planner) for lightning-fast communication.
+Couples already find their inspiration and vendors on Instagram, TikTok, and Google. Our job is to help them organize those external findings.
+
+- **The Sandbox:** Users can quickly add a vendor by pasting an Instagram or Website link. The AI will auto-extract the vendor's name, category, and contact info, saving them as a "Shortlisted" card.
+- **My Team:** A curated view on the Home Dashboard showing _only_ the vendors the user has officially hired. These appear as "speed dial" avatars for lightning-fast communication.
 
 ### 1.2 The Hiring Funnel
 
@@ -37,10 +39,9 @@ The backend must track both the global inventory of vendors and the specific, st
 
 ### 2.1 Entity Relationships
 
-To support this module, the data model utilizes two primary tables mapped to the overarching workspace:
+To support this module, the data model utilizes a single, workspace-scoped table rather than a complex global pivot structure:
 
-1. **`vendors`**: The global database of professionals. Contains static details (Name, Category, Rating, Location, Tags).
-2. **`vendor_relationships`**: The pivot table linking a `workspace_id` to a `vendor_id`. This table tracks the current funnel `status` (shortlisted, contacted, hired).
+1. **`saved_vendors`**: A table directly tied to the user's `workspace_id` containing the vendor details (Name, Category, Website, IG Handle) and their current funnel `status` (shortlisted, contacted, hired). There is no "global" vendor database for admins to maintain.
 
 ### 2.2 UI Component Architecture & Data Flow
 

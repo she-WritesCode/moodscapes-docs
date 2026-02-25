@@ -26,7 +26,8 @@ Please review the upcoming V2 features below. In the **Discussion Board at the v
 
 | Core Feature Module   | Research Justification (from 55k+ User Data)                                                           | Recommended Priority |
 | :-------------------- | :----------------------------------------------------------------------------------------------------- | :------------------- |
-| **Vendor Directory**  | **Venue-First Principle:** 82% of couples hire the Venue first. Everything flows downstream from this. | **High**             |
+| **Task & Notes OS**   | The core operating system of Moodscapes. All other modules connect to this.                            | **Non-Negotiable**   |
+| **Vendor CRM**        | **Venue-First Principle:** 82% of couples hire the Venue first. Everything flows downstream from this. | **High**             |
 | **Budget Tracker**    | Solves the #2 overall pain point: **Budget Anxiety** (47% of couples).                                 | **High**             |
 | **Guest Management**  | Solves the #3 overall pain point: **Guest List Paralysis** (36% of couples).                           | **High**             |
 | **Multiplayer Roles** | Solves the **Partner Imbalance** problem (72% inequality). 97% want equal planning.                    | **High**             |
