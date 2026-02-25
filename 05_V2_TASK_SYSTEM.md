@@ -15,6 +15,64 @@ When a user opens a task like "Find the perfect Florist," they don't just see a 
 - **Checkboxes** are for simple, manual things (e.g., "Call mom").
 - **Portals** are interactive buttons attached to subtasks that connect to other parts of the app.
 
+```bash
+[ Choose Wedding Dress          Attire · 6 months out ]
+
+  Progress ━━━━░░░░░░ 0 of 4
+
+  ┌─ Subtask 1 ──────────────────────────────────────┐
+  │ ○  Build your dress mood board                   │
+  │                                                  │
+  │   [ + Start mood board ]  ← tapping this opens   │
+  │     the inspiration board IN THIS SHEET,         │
+  │     pre-filtered to "Dress" — pins saved here    │
+  │     auto-attach to this task                     │
+  └──────────────────────────────────────────────────┘
+
+  ┌─ Subtask 2 ──────────────────────────────────────┐
+  │ ○  Research bridal boutiques                     │
+  │                                                  │
+  │   [ + Browse vendors ]  ← opens vendor directory │
+  │     filtered to "Bridal" inside this sheet.      │
+  │     Shortlisting a boutique links it here.       │
+  └──────────────────────────────────────────────────┘
+
+  ┌─ Subtask 3 ──────────────────────────────────────┐
+  │ ○  Book appointments (2–3 boutiques)             │
+  │                                                  │
+  │   [ + Add appointment ]  ← opens calendar        │
+  │     event creator inline. Event saves to         │
+  │     calendar AND links back to this task.        │
+  └──────────────────────────────────────────────────┘
+
+  ┌─ Subtask 4 ──────────────────────────────────────┐
+  │ ○  Set dress budget                              │
+  │                                                  │
+  │   [ + Set budget ]  ← opens the Attire budget   │
+  │     line inline. Amount saves to Budget module   │
+  │     AND shows here as a linked chip.             │
+  └──────────────────────────────────────────────────┘
+
+  ────────────────────────────────────────────────
+  📎 Linked objects (live, auto-updating)
+
+  🖼 Mood board  →  4 pins saved
+  🏪 Vendors     →  Atelier Rose (shortlisted)
+  📅 Calendar    →  Mar 14, 11am · Mar 21, 2pm
+  💰 Budget      →  $3,500 envelope set
+
+  ────────────────────────────────────────────────
+  💬 Notes                            [/ command]
+
+  "Love the A-line silhouette from pin 3.
+   Ask Atelier Rose about alterations timeline."
+
+  ────────────────────────────────────────────────
+  🤖 AI  →  "Appointments usually book 4–6 weeks
+             out. Want me to draft a boutique
+             inquiry email?"        [ Yes, draft it ]
+```
+
 ### 1.2 The "Nested Sheet" Workflow
 
 A key frustration with standard planning apps is getting lost. You leave your to-do list to go to the budget tab, and forget what task you were working on.
