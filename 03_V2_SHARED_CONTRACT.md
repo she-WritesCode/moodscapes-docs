@@ -71,13 +71,26 @@ To turn tasks into an interconnected OS, the following new domain objects exist 
 
 ```typescript
 // Vendor System
-export interface Vendor { ... }
-export interface VendorRelationship {
+export interface SavedVendor {
   id: string;
   userId: string;
-  vendorId: string;
+  name: string;
+  category: string;
+  websiteUrl?: string;
+  instagramHandle?: string;
   status: "shortlisted" | "contacted" | "hired" | "contract_signed" | "paid";
   assignedTaskIds: string[];
+}
+
+export interface PlatformCoordinator {
+  id: string;
+  name: string;
+  email: string; // Used for magic-link invite upon hiring
+  portfolioUrl?: string;
+  bio?: string;
+  basePrice: number;
+  platformFeePercentage: number; // Set by admin during onboarding
+  isActive: boolean; // Admin toggle to hide/show in marketplace
 }
 
 // Budget System
@@ -112,7 +125,7 @@ export interface CalendarEvent {
   userId: string;
   title: string;
   startTime: string; // ISO
-  endTime: string;   // ISO
+  endTime: string; // ISO
   linkedTaskId?: string;
 }
 
@@ -120,7 +133,7 @@ export interface CalendarEvent {
 export interface AIChatSession {
   id: string;
   userId: string;
-  contextType: 'global' | 'task' | 'vendor' | 'budget';
+  contextType: "global" | "task" | "vendor" | "budget";
   contextId?: string; // e.g., taskId if contextType is 'task'
   createdAt: string;
   updatedAt: string;
@@ -129,14 +142,14 @@ export interface AIChatSession {
 export interface AIChatMessage {
   id: string;
   sessionId: string;
-  role: 'user' | 'assistant';
+  role: "user" | "assistant";
   content: string;
   actionCards?: any[]; // e.g., embedded task or vendor cards
   createdAt: string;
 }
 
 // Guest Management System
-export type RSVPStatus = 'not_sent' | 'pending' | 'accepted' | 'declined';
+export type RSVPStatus = "not_sent" | "pending" | "accepted" | "declined";
 
 export interface GuestGroup {
   id: string;
@@ -181,7 +194,7 @@ export interface Note {
   userId: string;
   title: string;
   content: any; // e.g. JSON representation of block-style rich text
-  category: 'vows' | 'vendor_notes' | 'brainstorming' | 'logistics' | 'uncategorized';
+  category: "vows" | "vendor_notes" | "brainstorming" | "logistics" | "uncategorized";
   linkedTaskId?: string;
   isPinned: boolean;
   createdAt: string;
@@ -197,7 +210,7 @@ export interface Workspace {
   createdAt: string;
 }
 
-export type CollaboratorRole = 'partner' | 'coordinator' | 'vendor_limited';
+export type CollaboratorRole = "partner" | "coordinator" | "vendor_limited";
 
 export interface WorkspaceCollaborator {
   id: string;
@@ -231,21 +244,27 @@ ALTER TABLE tasks
 ### 2.2 New V2 Tables
 
 ```sql
-create table vendors (
+create table saved_vendors (
   id uuid default gen_random_uuid() primary key,
+  workspace_id uuid not null, -- Links to specific wedding event
   name text not null,
   category text not null,
-  tags text[] default array[]::text[],
-  rating numeric(3, 2),
-  location text
-);
-
-create table vendor_relationships (
-  id uuid default gen_random_uuid() primary key,
-  user_id uuid references auth.users not null,
-  vendor_id uuid references vendors not null,
+  website_url text,
+  instagram_handle text,
   status text not null,
   assigned_task_ids uuid[] default array[]::uuid[],
+  created_at timestamptz default now()
+);
+
+create table platform_coordinators (
+  id uuid default gen_random_uuid() primary key,
+  name text not null,
+  email text unique not null,
+  portfolio_url text,
+  bio text,
+  base_price numeric(10, 2) not null,
+  platform_fee_percentage numeric(5, 2) not null default 10.00,
+  is_active boolean default false, -- Set true by admins after vetting
   created_at timestamptz default now()
 );
 

@@ -14,6 +14,12 @@ To balance low operational overhead with strong monetization, V2 uses a dual-str
 
 - **General Vendors (Personal CRM Base):** For florists, DJs, and caterers, Moodscapes acts as your private workspace. We do not maintain a global database of every florist on Earth. Instead, users bring their own leads into the app via the "Link Sandbox".
 - **The Coordinator Marketplace (Monetization Engine):** Hiring Professional Planners is how the platform generates revenue. This is the _only_ category that utilizes a **Global Directory**. Users can browse, contact, and officially hire Moodscapes-approved coordinators directly through the app.
+  - **Admin Onboarding:** Moodscapes admins manually vet and onboard Coordinators onto the platform, setting their profile, portfolio, and platform fee percentage.
+  - **The Hiring Flow:** When a couple clicks "Hire & Pay Deposit" on a Coordinator's profile, the system:
+    1. Processes the transaction (triggering Moodscapes' revenue cut).
+    2. Automatically creates a `workspace_collaborators` record.
+    3. Dispatches a "You've been hired!" email to the Coordinator with a magic link.
+    4. Upon clicking the link, the Coordinator's dashboard immediately grants them access to the couple's workspace.
 
 ### 1.2 The "Link Sandbox" (How Users Add Vendors)
 
