@@ -1,12 +1,15 @@
 # Moodscapes V2 UI/UX Architecture
 
-## Foundation
+## Foundation & Visual Identity (The `inspo` Folder)
 
-The visual design language continues the Moodscapes brand:
+The visual design language must feel premium, calming, and deeply human. If you are an AI builder reading this, you must reference the images in the root `/inspo` folder (such as `hero .jpeg` and `scooter dashboard.jpeg`) to match this aesthetic perfectly.
 
-- Soft, human-centric layouts with "vowcraft" serif italics used sparingly for branding.
-- Colors: Romantic, warm tones, minimal hard borders (glassmorphism/blur effects).
-- **Core interaction principle:** Notion-like blocks everywhere. Text fields support `/` commands, enabling rich interconnection.
+**Concrete Styling Rules:**
+
+- **Typography:** Use clean, modern sans-serifs for the UI (like Inter or San Francisco), paired with elegant serif fonts (like Playfair Display) specifically for large headers and countdowns. Use _italics_ sparingly for romantic emphasis ("vowcraft").
+- **Color Palette:** Avoid harsh primary colors. Use warm, muted, romantic tones (creams, warm whites, taupes, soft blush/terracotta) to evoke calm.
+- **Components:** Avoid heavy dropshadows and harsh borders. Use subtle, soft shadows, glassmorphism (blurred translucent backgrounds), and slight rounded corners (e.g., `rounded-2xl` or `rounded-3xl` in Tailwind) to keep the app feeling organic and fluid.
+- **Core interaction principle:** Notion-like blocks everywhere. Text fields support `/` commands, enabling rich interconnection without cluttered UI buttons.
 
 ## 1. Global Navigation
 
