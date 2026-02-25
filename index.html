@@ -22,33 +22,43 @@
     <!-- Docsify v4 -->
     <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
 
-    <!-- Giscus Commenting Plugin -->
-    <link rel="stylesheet" href="https://unpkg.com/docsify-giscus@1.0.0/dist/giscus.css" />
-    <script src="https://unpkg.com/docsify-giscus@1.0.0/dist/docsify-giscus.min.js"></script>
+    <!-- Giscus Native Integration (Fixes Overlap Bug) -->
     <script>
-      // Automatically load the Giscus script to initialize comments on every page
       window.$docsify.plugins = [
         function (hook, vm) {
-          hook.mounted(function () {
-            var script = document.createElement("script");
-            script.src = "https://giscus.app/client.js";
-            // Replace these 3 values with your actual Github Repo details once the repo is public
-            script.setAttribute("data-repo", "she-WritesCode/moodscapes-docs");
-            script.setAttribute("data-repo-id", "R_kgDORYKaWw");
-            script.setAttribute("data-category", "Ideas");
-            script.setAttribute("data-category-id", "DIC_kwDORYKaW84C3JUP");
+          // Append a container element below the markdown content
+          hook.afterEach(function (html, next) {
+            var giscusContainer = '<br/><br/><hr/><div class="giscus"></div>';
+            next(html + giscusContainer);
+          });
 
-            script.setAttribute("data-mapping", "url");
-            script.setAttribute("data-strict", "0");
-            script.setAttribute("data-reactions-enabled", "1");
-            script.setAttribute("data-emit-metadata", "0");
-            script.setAttribute("data-input-position", "top");
-            script.setAttribute("data-theme", "preferred_color_scheme");
-            script.setAttribute("data-lang", "en");
-            script.setAttribute("data-loading", "lazy");
-            script.crossOrigin = "anonymous";
-            script.async = true;
-            document.body.appendChild(script);
+          // Inject the script into the container after rendering
+          hook.doneEach(function () {
+            var container = document.querySelector(".giscus");
+            if (container) {
+              // Ensure we don't load twice on page transitions
+              container.innerHTML = "";
+
+              var script = document.createElement("script");
+              script.src = "https://giscus.app/client.js";
+              script.setAttribute("data-repo", "she-WritesCode/moodscapes-docs");
+              script.setAttribute("data-repo-id", "R_kgDORYKaWw");
+              script.setAttribute("data-category", "Ideas");
+              script.setAttribute("data-category-id", "DIC_kwDORYKaW84C3JUP");
+
+              script.setAttribute("data-mapping", "url");
+              script.setAttribute("data-strict", "0");
+              script.setAttribute("data-reactions-enabled", "1");
+              script.setAttribute("data-emit-metadata", "0");
+              script.setAttribute("data-input-position", "top");
+              script.setAttribute("data-theme", "preferred_color_scheme");
+              script.setAttribute("data-lang", "en");
+              script.setAttribute("data-loading", "lazy");
+              script.crossOrigin = "anonymous";
+              script.async = true;
+
+              container.appendChild(script);
+            }
           });
         },
       ].concat(window.$docsify.plugins || []);

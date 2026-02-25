@@ -12,3 +12,12 @@
 - [Vision (Mood Board)](10_V2_VISION_MODULE.md)
 - [Notes & Docs](11_V2_NOTES_MODULE.md)
 - [Collaboration Roles](12_V2_COLLABORATION_ROLES.md)
+
+---
+
+**MVP Archive (V1)**
+
+- [MVP PRD](mvp/MVP_PRD.md)
+- [MVP Task Architecture](mvp/MVP_TASK_ARCHITECTURE.md)
+- [MVP Data Models](mvp/MVP_DATA_MODELS.md)
+- [Supabase Schema](mvp/SUPABASE_SCHEMA.md)
