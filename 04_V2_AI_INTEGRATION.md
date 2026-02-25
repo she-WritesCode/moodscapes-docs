@@ -129,9 +129,40 @@ To make conversations strictly actionable, the AI is instructed to return `actio
 
 The Frontend is responsible for mapping the `"type": "calendar_event_form"` string to the actual React/Vue `<CalendarEventForm />` component, spreading `prefill_data` as default props.
 
+### 2.5 Vendor Link Extraction Prompt (Unstructured Data Parsing)
+
+When a user pastes a social media link into the Vendor Sandbox, the backend fetches the raw HTML metadata and passes it to the LLM.
+
+> **System Prompt Instruction:**
+> "You are a data extraction assistant. I will provide raw HTML metadata or scraped text from a vendor's website or social media profile. You must extract the vendor's name, category (e.g., florist, bakery, photographer), and contact methods (email, phone, or booking link). Return ONLY a valid JSON object matching the `ExtractedVendor` schema."
+
 ---
 
-## 3. Success Metrics & KPIs (How we know it's working)
+## 3. AI Cost Management & Optimization (Tracking ROI)
+
+Because LLM API calls (like OpenAI or Gemini) charge per token, we must treat AI usage as a closely monitored unit metric. We cannot allow a single user to rack up a $50 API bill by repeatedly pasting thousands of links.
+
+### 3.1 Token Tracking per Workspace
+
+Every call to the LLM (Generating Tasks, Chatting, or Extracting Links) must log the `prompt_tokens` and `completion_tokens` against the `workspace_id` in our database.
+
+- **Why:** This allows us to calculate the exact AI Cost of Goods Sold (COGS) per user, ensuring our subscription fee or coordinator marketplace take-rate always exceeds the API cost.
+
+### 3.2 Rate Limiting & Abuse Prevention
+
+- **Chat Rate Limits:** Limit free/trial users to 20 AI chats per day.
+- **Extraction Rate Limits:** Limit the Vendor Link Sandbox to 10 extractions per hour to prevent users from writing scripts that scrape the web into our app.
+
+### 3.3 The Vendor Caching Strategy (Cost Saver)
+
+To drastically reduce costs, we will use a **Global Vendor Cache**.
+When a user pastes `instagram.com/p/PopularFlorist`, before calling the LLM, the backend checks if _any other user_ has ever pasted that exact link. If they have, the backend simply returns the cached JSON data.
+
+- **Result:** As the app grows, the AI extraction cost approaches $0 because the most popular local vendors are already cached in our system.
+
+---
+
+## 4. Success Metrics & KPIs (How we know it's working)
 
 To validate the ROI of the context-aware Prompts and Action Cards, we will monitor:
 
