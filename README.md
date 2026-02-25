@@ -24,15 +24,16 @@ We will use the total number of comments and upvotes on each page to finalize ou
 
 Please review the upcoming V2 features below. In the **Discussion Board at the very bottom of this page**, leave a single comment listing these features and tell us if you think they are **High, Medium, or Low priority** for our immediate roadmap.
 
-| Core Feature Module   | Research Justification (from 55k+ User Data)                                                           | Recommended Priority |
-| :-------------------- | :----------------------------------------------------------------------------------------------------- | :------------------- |
-| **Task & Notes OS**   | The core operating system of Moodscapes. All other modules connect to this.                            | **Non-Negotiable**   |
-| **Vendor CRM**        | **Venue-First Principle:** 82% of couples hire the Venue first. Everything flows downstream from this. | **High**             |
-| **Budget Tracker**    | Solves the #2 overall pain point: **Budget Anxiety** (47% of couples).                                 | **High**             |
-| **Guest Management**  | Solves the #3 overall pain point: **Guest List Paralysis** (36% of couples).                           | **High**             |
-| **Multiplayer Roles** | Solves the **Partner Imbalance** problem (72% inequality). 97% want equal planning.                    | **High**             |
-| **Calendar Sync**     | Essential for zero-surprise execution, but couples can survive with MVP lists temporarily.             | **Medium**           |
-| **Vision Board**      | Highly engaging, but Inspiration is often solved manually via Pinterest (already used by 75%).         | **Medium**           |
+| Core Feature Module         | Research Justification (from 55k+ User Data)                                                           | Recommended Priority |
+| :-------------------------- | :----------------------------------------------------------------------------------------------------- | :------------------- |
+| **Task & Notes OS**         | The core operating system of Moodscapes. All other modules connect to this.                            | **Non-Negotiable**   |
+| **Coordinator Marketplace** | The core **Monetization Engine**. Couples can browse and directly hire platform-approved planners.     | **High**             |
+| **General Vendor CRM**      | **Venue-First Principle:** 82% of couples hire the Venue first. Everything flows downstream from this. | **High**             |
+| **Budget Tracker**          | Solves the #2 overall pain point: **Budget Anxiety** (47% of couples).                                 | **High**             |
+| **Guest Management**        | Solves the #3 overall pain point: **Guest List Paralysis** (36% of couples).                           | **High**             |
+| **Multiplayer Roles**       | Solves the **Partner Imbalance** problem (72% inequality). 97% want equal planning.                    | **High**             |
+| **Calendar Sync**           | Essential for zero-surprise execution, but couples can survive with MVP lists temporarily.             | **Medium**           |
+| **Vision Board**            | Highly engaging, but Inspiration is often solved manually via Pinterest (already used by 75%).         | **Medium**           |
 
 ---
 

@@ -21,7 +21,7 @@ The Primary Owner can invite people to join their specific Workspace directly fr
 
 - **Primary Owner:** The creator. Can manage billing, delete the workspace, and invite/revoke others.
 - **Partner:** The other half of the couple. Has full access to read, write, and chat with the AI. They cannot lock out the Primary Owner.
-- **Coordinator (Vendor):** A hired professional.
+- **Coordinator (Vendor):** A hired professional. Couples typically discover and hire these verified planners through the platform's internal **Coordinator Marketplace**, generating revenue for Moodscapes. Once hired:
   - They have _Full Access_ to Tasks, the Calendar, and the Vendor Directory.
   - They have _Read-Only_ access to the Budget (to see what is paid/unpaid without deleting budgets).
   - They have _Read-Only_ access to the Guest List (with optional permissions to edit seating charts).

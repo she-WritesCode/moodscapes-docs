@@ -8,11 +8,12 @@ Finding and managing vendors is one of the most time-consuming parts of wedding 
 
 ## 1. The Vendor CRM (For Stakeholders)
 
-### 1.1 A Personal CRM vs. A Global Dashboard
+### 1.1 The Dual-Strategy: Personal CRM vs. Global Marketplace
 
-To avoid the massive operational overhead of building a "Yelp-style" marketplace (which requires onboarding vendors and admins), the Moodscapes Vendor module is strictly designed as a **Personal CRM**.
+To balance low operational overhead with strong monetization, V2 uses a dual-strategy for vendors:
 
-Couples already find their inspiration and vendors on Instagram, TikTok, and Google. Our job is to help them organize those external findings.
+- **General Vendors (Personal CRM):** For florists, DJs, and caterers, Moodscapes acts as a Personal CRM. Users paste an Instagram or Website link, and the AI auto-extracts the details to save them as a "Shortlisted" card. We do not need to maintain a global database of every florist on Earth.
+- **The Coordinator Marketplace (Monetization Engine):** Hiring Professional Coordinators and Planners is how the platform generates revenue. Therefore, this is the _only_ category that utilizes a **Global Directory**. Users can browse, contact, and officially hire Moodscapes-approved coordinators directly through the app.
 
 - **The Sandbox:** Users can quickly add a vendor by pasting an Instagram or Website link. The AI will auto-extract the vendor's name, category, and contact info, saving them as a "Shortlisted" card.
 - **My Team:** A curated view on the Home Dashboard showing _only_ the vendors the user has officially hired. These appear as "speed dial" avatars for lightning-fast communication.
@@ -39,9 +40,10 @@ The backend must track both the global inventory of vendors and the specific, st
 
 ### 2.1 Entity Relationships
 
-To support this module, the data model utilizes a single, workspace-scoped table rather than a complex global pivot structure:
+To support this dual-strategy, the data model utilizes two primary tables:
 
-1. **`saved_vendors`**: A table directly tied to the user's `workspace_id` containing the vendor details (Name, Category, Website, IG Handle) and their current funnel `status` (shortlisted, contacted, hired). There is no "global" vendor database for admins to maintain.
+1. **`saved_vendors`**: A table directly tied to the user's `workspace_id` acting as the Personal CRM for general vendors (florists, etc.). Contains link-scraped details and their current funnel `status`.
+2. **`platform_coordinators`**: A global database managed by Moodscapes admins. Professional coordinators apply to be listed here, and users can hire them directly, triggering the platform's revenue capture.
 
 ### 2.2 UI Component Architecture & Data Flow
 
