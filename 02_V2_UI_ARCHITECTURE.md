@@ -109,3 +109,5 @@ To avoid the "Dual-FAB Problem", the AI interaction point adjusts contextually b
   - Task cards (Tap to add to your list).
   - Vendor cards (Tap to open profile).
   - Calendar event cards.
+
+> Note: FAB is an abbreviation for Floating action button
