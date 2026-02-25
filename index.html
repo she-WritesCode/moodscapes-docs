@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Moodscapes V2 Specs</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="Description" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css" />
+  </head>
+  <body>
+    <div id="app"></div>
+    <script>
+      window.$docsify = {
+        name: "Moodscapes V2 Specs",
+        repo: "https://github.com/miri-joyful-plan/miri-joyful-plan",
+        loadSidebar: true,
+        subMaxLevel: 2,
+        themeColor: "#FF6B6B",
+      };
+    </script>
+    <!-- Docsify v4 -->
+    <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+
+    <!-- Giscus Commenting Plugin -->
+    <link rel="stylesheet" href="https://unpkg.com/docsify-giscus@1.0.0/dist/giscus.css" />
+    <script src="https://unpkg.com/docsify-giscus@1.0.0/dist/docsify-giscus.min.js"></script>
+    <script>
+      // Automatically load the Giscus script to initialize comments on every page
+      window.$docsify.plugins = [
+        function (hook, vm) {
+          hook.mounted(function () {
+            var script = document.createElement("script");
+            script.src = "https://giscus.app/client.js";
+            // Replace these 3 values with your actual Github Repo details once the repo is public
+            script.setAttribute("data-repo", "miri-joyful-plan/miri-joyful-plan");
+            script.setAttribute("data-repo-id", "YOUR_REPO_ID");
+            script.setAttribute("data-category-id", "YOUR_CATEGORY_ID");
+
+            script.setAttribute("data-mapping", "title");
+            script.setAttribute("data-strict", "0");
+            script.setAttribute("data-reactions-enabled", "1");
+            script.setAttribute("data-emit-metadata", "0");
+            script.setAttribute("data-input-position", "bottom");
+            script.setAttribute("data-theme", "light");
+            script.setAttribute("data-lang", "en");
+            script.crossOrigin = "anonymous";
+            script.async = true;
+            document.body.appendChild(script);
+          });
+        },
+      ].concat(window.$docsify.plugins || []);
+    </script>
+  </body>
+</html>
